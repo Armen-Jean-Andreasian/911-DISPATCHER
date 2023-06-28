@@ -1,0 +1,8 @@
+my_project/
+- articles/
+    - earthquakes.html
+- static/
+    -script.js
+    -styles.css
+- templates/
+    -index.html
