@@ -24,11 +24,33 @@ function handleEmergencyType() {
                 option.text = medicalEmergencies[j];
                 specificEmergencySelect.add(option);
             }
+        } else if (emergencyTypeSelect.value === "fire-incidents") {
+            var fireIncidents = ["Building Fire", "Gas Leak", "Vehicle Fire"];
+            for (var k = 0; k < fireIncidents.length; k++) {
+                var option = document.createElement("option");
+                option.text = fireIncidents[k];
+                specificEmergencySelect.add(option);
+            }
+        } else if (emergencyTypeSelect.value === "criminal-activity") {
+            var criminalActivity = ["Burglary", "Assault", "Robbery", "Theft"];
+            for (var l = 0; l < criminalActivity.length; l++) {
+                var option = document.createElement("option");
+                option.text = criminalActivity[l];
+                specificEmergencySelect.add(option);
+            }
+        } else if (emergencyTypeSelect.value === "criminal-offenses") {
+            var criminalOffenses = ["Trafficking", "Blackmailing"];
+            for (var m = 0; m < criminalOffenses.length; m++) {
+                var option = document.createElement("option");
+                option.text = criminalOffenses[m];
+                specificEmergencySelect.add(option);
+            }
         }
 
         proceedButton.disabled = false;
     }
 }
+
 function loadArticle() {
     var specificEmergencySelect = document.getElementById("specific-emergency");
     var articleContainer = document.getElementById("article-container");
@@ -46,5 +68,3 @@ function loadArticle() {
             });
     }
 }
-
-
