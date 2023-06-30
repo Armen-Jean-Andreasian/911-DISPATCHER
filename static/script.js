@@ -39,7 +39,7 @@ function handleEmergencyType() {
                 specificEmergencySelect.add(option);
             }
         } else if (emergencyTypeSelect.value === "criminal-offenses") {
-            var criminalOffenses = ["Trafficking", "Blackmailing"];
+            var criminalOffenses = ["Victim of Trafficking", "Witness of Trafficking", "Blackmailing"];
             for (var m = 0; m < criminalOffenses.length; m++) {
                 var option = document.createElement("option");
                 option.text = criminalOffenses[m];
