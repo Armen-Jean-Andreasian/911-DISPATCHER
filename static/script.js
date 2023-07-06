@@ -18,7 +18,7 @@ function handleEmergencyType() {
                 specificEmergencySelect.add(option);
             }
         } else if (emergencyTypeSelect.value === "medical-emergencies") {
-            var medicalEmergencies = ["Heart Attacks", "Strokes", "Allergic Reactions", "Seizures", "Snake Bites"];
+            var medicalEmergencies = ["Heart Attacks", "Allergic Reactions", "Seizures", "Snake Bites"];
             for (var j = 0; j < medicalEmergencies.length; j++) {
                 var option = document.createElement("option");
                 option.text = medicalEmergencies[j];

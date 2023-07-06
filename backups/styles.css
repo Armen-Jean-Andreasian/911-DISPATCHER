@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-image: url("https://i.ibb.co/HTBXbhh/wp7442224.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+h1, h3, p {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: black; /* Change the font color for dropdown menus */
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+#article-container {
+  position: relative;
+  padding: 0 20px; /* Add padding to create space between the borders and the text */
+  border-left: 2px solid white; /* Add a left border */
+  border-right: 2px solid white; /* Add a right border */
+  text-align: justify; /* Justify the text */
+  hyphens: auto; /* Enable hyphenation for long words */
+  word-break: break-word; /* Break words that exceed the container width */
+  max-width: 700px; /* Adjust the value to set the desired maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+}
+

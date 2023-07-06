@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>911 Emergency Handling</title>
+    <title>911 DISPATCHER</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="content">
-        <p>Please note that by accessing this page, you acknowledge that you are solely responsible for any actions taken based on the information provided.
-            <br>We are not liable for any consequences.</p>
-    </div>
+<div class="nav-container">
+    <a href="{{ url_for('index') }}" class="home-link">
+        <img src="{{ url_for('static', filename='home.png') }}" alt="Home">
+    </a>
+</div>
 
-    <h1>911 Emergency Handling</h1>
+    <h1>911 DISPATCHER</h1>
     <h3>I'm here to provide help</h3>
 
     <div class="content">
