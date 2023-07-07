@@ -1,8 +1,13 @@
 my_project/
 - articles/
-    - earthquakes.html
+    -earthquakes.html
+    -etc...
 - static/
+    - favicon.png
+    - home.png
     -script.js
     -styles.css
 - templates/
     -index.html
+    -emergency_numbers.html
+-main.py

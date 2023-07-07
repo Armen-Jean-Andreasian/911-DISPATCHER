@@ -69,20 +69,15 @@ function loadArticle() {
     }
 }
 function emergencyNumbers() {
-  // Get the selected nationality and country
-  console.log("emergencyNumbers() function called");
-
   var nationalitySelect = document.getElementById("nationality-select");
   var countrySelect = document.getElementById("country-select");
   var nationality = nationalitySelect.value;
   var country = countrySelect.value;
 
-  // Create a data object with the search data
   var searchData = {
     search_data: { nationality: nationality, country: country },
   };
 
-  // Make a POST request to the backend /search route
   fetch("/search", {
     method: "POST",
     headers: {
@@ -92,20 +87,47 @@ function emergencyNumbers() {
   })
     .then((response) => response.json())
     .then((data) => {
-      // Display the generated links on the page
       var linksContainer = document.getElementById("links-container");
       linksContainer.innerHTML = "";
 
       data.forEach((link) => {
-        var linkElement = document.createElement("a");
-        linkElement.href = link;
-        linkElement.target = "_blank";
-        linkElement.textContent = link;
-        linksContainer.appendChild(linkElement);
+        var linkName = getLinkName(link);
+
+        var linkButton = document.createElement("button");
+        linkButton.classList.add("link-button");
+
+        linkButton.textContent = linkName;
+        linkButton.addEventListener("click", function() {
+          window.open(link, "_blank");
+        });
+
+        linksContainer.appendChild(linkButton);
         linksContainer.appendChild(document.createElement("br"));
       });
     })
     .catch((error) => {
       console.error("Error:", error);
     });
+}
+
+function getLinkName(link) {
+  var name = "";
+
+  if (link.includes("embassy")) {
+    name = "Your embassy";
+  } else if (link.includes("police")) {
+    name = "Emergency Police Number";
+  } else if (link.includes("ambulance")) {
+    name = "Emergency Ambulance Number";
+  } else if (link.includes("fire")) {
+    name = "Emergency Fire Number";
+  } else if (link.includes("rescue")) {
+    name = "Rescue Service Number";
+  } else if (link.includes("human+rights+watch")) {
+    name = "Human Rights Watch";
+  } else if (link.includes("Red%20Cross")) {
+    name = "Red Cross";
+  }
+
+  return name;
 }

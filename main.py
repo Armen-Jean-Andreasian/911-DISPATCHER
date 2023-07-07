@@ -20,7 +20,7 @@ def emergency_numbers():
 @app.route('/search', methods=['POST'])
 def perform_search():
     # Получение данных поиска из запроса
-    nationality, country = request.json['search_data']
+    nationality, country = request.json['search_data']['nationality'], request.json['search_data']['country']
 
     embassy_template = f"https://www.google.com/search?q=phone+number+of+{nationality}+embassy+in+{country}"
     police_template = f"https://www.google.com/search?q=emergency+police+number+in+{country}"
@@ -33,6 +33,7 @@ def perform_search():
 
     return jsonify([embassy_template, police_template, ambulance_template, fire_template, rescue_service,
                     human_rights_watch, red_cross_template])
+
 
 
 if __name__ == '__main__':
