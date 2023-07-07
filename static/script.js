@@ -122,6 +122,9 @@ function emergencyNumbers() {
       var linksContainer = document.getElementById("links-container");
       linksContainer.innerHTML = "";
 
+      var linkGrid = document.createElement("div");
+      linkGrid.classList.add("link-grid");
+
       data.forEach((link) => {
         var linkName = getLinkName(link);
 
@@ -133,9 +136,10 @@ function emergencyNumbers() {
           window.open(link, "_blank");
         });
 
-        linksContainer.appendChild(linkButton);
-        linksContainer.appendChild(document.createElement("br"));
+        linkGrid.appendChild(linkButton);
       });
+
+      linksContainer.appendChild(linkGrid);
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -155,8 +159,6 @@ function getLinkName(link) {
     name = "Emergency Fire Number";
   } else if (link.includes("rescue")) {
     name = "Rescue Service Number";
-  } else if (link.includes("human+rights+watch")) {
-    name = "Human Rights Watch";
   } else if (link.includes("Red%20Cross")) {
     name = "Red Cross";
   }

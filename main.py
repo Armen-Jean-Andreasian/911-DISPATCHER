@@ -37,7 +37,7 @@ def perform_search():
                          f"%20Crescent%20Societies+contact+in+{country}"
 
     return jsonify([embassy_template, police_template, ambulance_template, fire_template, rescue_service,
-                    human_rights_watch, red_cross_template])
+                    red_cross_template])
 
 
 if __name__ == '__main__':
