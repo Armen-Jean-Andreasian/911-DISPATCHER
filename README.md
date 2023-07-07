@@ -21,4 +21,5 @@ The project has the following structure:
 - `templates/`: Contains the HTML templates for the web pages.
   - `index.html`: The main HTML template that displays the emergency type and specific emergency dropdowns, as well as the article container.
 
-[![](https://i.ibb.co/3sqV0YM/image.png)](#)
+[![Clickable Image](https://i.ibb.co/3sqV0YM/image.png)](http://911dispatcher.pythonanywhere.com/)
+
