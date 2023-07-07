@@ -68,6 +68,38 @@ function loadArticle() {
             });
     }
 }
+
+function handleDropdownChange() {
+  var nationalitySelect = document.getElementById("nationality-select");
+  var countrySelect = document.getElementById("country-select");
+  var searchButton = document.getElementById("search-button");
+
+  if (nationalitySelect.value !== "" && countrySelect.value !== "") {
+    searchButton.disabled = false;
+  } else {
+    searchButton.disabled = true;
+  }
+}
+
+function handleDropdownChange() {
+  var nationalitySelect = document.getElementById("nationality-select");
+  var countrySelect = document.getElementById("country-select");
+  var searchButton = document.getElementById("search-button");
+
+  if (nationalitySelect.value !== "") {
+    countrySelect.disabled = false;
+  } else {
+    countrySelect.disabled = true;
+    searchButton.disabled = true;
+  }
+
+  if (nationalitySelect.value !== "" && countrySelect.value !== "") {
+    searchButton.disabled = false;
+  } else {
+    searchButton.disabled = true;
+  }
+}
+
 function emergencyNumbers() {
   var nationalitySelect = document.getElementById("nationality-select");
   var countrySelect = document.getElementById("country-select");

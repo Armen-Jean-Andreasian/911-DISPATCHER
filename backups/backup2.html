@@ -19,9 +19,9 @@
 <div class="content-container">
     <div class="search-form">
         <div class="form-row">
-            <p>Select Your Nationality:</p>
-            <select id="nationality-select" onchange="handleDropdownChange()">
-                <option disabled selected value="">Select</option>
+            <label for="nationality-select" style="display:block;">Select Your Nationality:</label>
+            <select id="nationality-select">
+                <option  disabled selected>Select</option>
                 <!-- Yes I could take input, but this should be a dropdown list. My project, my rules. -->
                 <option value="andorran">Andorran</option>
                 <option value="angolan">Angolan</option>
@@ -101,6 +101,7 @@
                 <option value="jamaican">Jamaican</option>
                 <option value="japanese">Japanese</option>
                 <option value="jordanian">Jordanian</option>
+                <option value="kazakh">Kazakh</option>
                 <option value="kenyan">Kenyan</option>
                 <option value="kittian_and_nevisian">Kittian and Nevisian</option>
                 <option value="kuwaiti">Kuwaiti</option>
@@ -152,6 +153,7 @@
                 <option value="polish">Polish</option>
                 <option value="portuguese">Portuguese</option>
                 <option value="romanian">Romanian</option>
+                <option value="russian">Russian</option>
                 <option value="rwandan">Rwandan</option>
                 <option value="saint_kitts_and_nevis">Saint Kitts and Nevis</option>
                 <option value="saint_lucian">Saint Lucian</option>
@@ -170,6 +172,7 @@
                 <option value="slovenian">Slovenian</option>
                 <option value="solomon_islander">Solomon Islander</option>
                 <option value="somali">Somali</option>
+                <option value="south_african">South African</option>
                 <option value="south_korean">South Korean</option>
                 <option value="south_sudanese">South Sudanese</option>
                 <option value="spanish">Spanish</option>
@@ -193,6 +196,7 @@
                 <option value="ugandan">Ugandan</option>
                 <option value="ukrainian">Ukrainian</option>
                 <option value="uruguayan">Uruguayan</option>
+                <option value="uzbek">Uzbek</option>
                 <option value="vanuatuan">Vanuatuan</option>
                 <option value="vatican">Vatican</option>
                 <option value="venezuelan">Venezuelan</option>
@@ -206,9 +210,9 @@
         </div>
 
         <div class="form-row">
-            <p>Select the Country you are in:</p>
-            <select id="country-select" onchange="handleDropdownChange()" disabled>
-                <option disabled selected value="">Select</option>
+            <label for="country-select" style="display:block;">Select the Country you are in:</label>
+            <select id="country-select">
+                <option disabled selected>Select</option>
                 <option value="uk">U.K.</option>
                 <option value="afghanistan">Afghanistan</option>
                 <option value="albania">Albania</option>
@@ -410,14 +414,9 @@
             </select>
         </div>
 
-        <div class="search-container">
-          <button id="search-button" onclick="emergencyNumbers()" disabled>Find</button>
-        </div>
+        <button id="search-button" onclick="emergencyNumbers()" >Find</button>
     </div>
-    <div class="buttons">
-        <div id="links-container"></div>
-    </div>
-
+    <div id="links-container"></div>
 </div>
 </body>
 </html>

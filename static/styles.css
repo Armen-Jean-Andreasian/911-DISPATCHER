@@ -49,6 +49,7 @@ select {
     align-items: center;
     height: 60px;
     padding: 0;
+    margin-bottom: 50px;
 }
 
 .nav-container .logo {
@@ -142,12 +143,19 @@ html, body {
     padding: 0;
 }
 
-button.search-button {
-    position: center;
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 button.link-button {
   width: 200px;
   height: 40px;
   margin-bottom: 2px;
+}
+
+.buttons {
+  margin-top: 20px;
 }

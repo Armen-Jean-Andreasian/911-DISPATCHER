@@ -68,3 +68,66 @@ function loadArticle() {
             });
     }
 }
+function emergencyNumbers() {
+  var nationalitySelect = document.getElementById("nationality-select");
+  var countrySelect = document.getElementById("country-select");
+  var nationality = nationalitySelect.value;
+  var country = countrySelect.value;
+
+  var searchData = {
+    search_data: { nationality: nationality, country: country },
+  };
+
+  fetch("/search", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(searchData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      var linksContainer = document.getElementById("links-container");
+      linksContainer.innerHTML = "";
+
+      data.forEach((link) => {
+        var linkName = getLinkName(link);
+
+        var linkButton = document.createElement("button");
+        linkButton.classList.add("link-button");
+
+        linkButton.textContent = linkName;
+        linkButton.addEventListener("click", function() {
+          window.open(link, "_blank");
+        });
+
+        linksContainer.appendChild(linkButton);
+        linksContainer.appendChild(document.createElement("br"));
+      });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+function getLinkName(link) {
+  var name = "";
+
+  if (link.includes("embassy")) {
+    name = "Your embassy";
+  } else if (link.includes("police")) {
+    name = "Emergency Police Number";
+  } else if (link.includes("ambulance")) {
+    name = "Emergency Ambulance Number";
+  } else if (link.includes("fire")) {
+    name = "Emergency Fire Number";
+  } else if (link.includes("rescue")) {
+    name = "Rescue Service Number";
+  } else if (link.includes("human+rights+watch")) {
+    name = "Human Rights Watch";
+  } else if (link.includes("Red%20Cross")) {
+    name = "Red Cross";
+  }
+
+  return name;
+}

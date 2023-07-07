@@ -2,6 +2,7 @@ from flask import Flask, render_template, send_from_directory, request, jsonify
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -22,6 +23,10 @@ def perform_search():
     # Получение данных поиска из запроса
     nationality, country = request.json['search_data']['nationality'], request.json['search_data']['country']
 
+    nationality = nationality.replace("_", "+")
+    country = country.replace("_", "+")
+
+
     embassy_template = f"https://www.google.com/search?q=phone+number+of+{nationality}+embassy+in+{country}"
     police_template = f"https://www.google.com/search?q=emergency+police+number+in+{country}"
     ambulance_template = f"https://www.google.com/search?q=emergency+ambulance+number+in+{country}"
@@ -33,7 +38,6 @@ def perform_search():
 
     return jsonify([embassy_template, police_template, ambulance_template, fire_template, rescue_service,
                     human_rights_watch, red_cross_template])
-
 
 
 if __name__ == '__main__':

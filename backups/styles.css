@@ -42,11 +42,12 @@ select {
 }
 
 /* Стили для панели навигации */
+/* Стили для панели навигации */
 .nav-container {
     background-color: black;
     display: flex;
     align-items: center;
-    height: 55px;
+    height: 60px;
     padding: 0;
 }
 
@@ -66,12 +67,65 @@ select {
     font-size: 14px;
     margin-left: 10px;
 }
-
+.nav-container .action-button {
+    margin-left: auto; /* Располагаем кнопку справа */
+    padding: 8px 16px; /* Добавляем отступы для кнопки */
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
 .nav-container .divider {
     width: 1px;
     height: 40px;
     background-color: white;
     margin: 0 10px; /* Adjust the margin as needed */
+}
+
+/* Остальные стили */
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-image: url("https://i.ibb.co/HTBXbhh/wp7442224.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Расширяем контейнер, чтобы занимал доступное пространство */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h3, p {
+    text-align: center;
+}
+
+select {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
 }
 
 #article-container {
@@ -82,4 +136,21 @@ select {
     word-break: break-word;
     max-width: 700px;
     margin: 0 auto;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+button.search-button {
+  width: 200px;
+  height: 40px;
+  margin-bottom: 2px;
+  position: center;
+}
+
+button.link-button {
+  width: 200px;
+  height: 40px;
+  margin-bottom: 2px;
 }
