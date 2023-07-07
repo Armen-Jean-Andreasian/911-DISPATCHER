@@ -1,9 +1,9 @@
 body {
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100vh;
-    margin: 0;
     padding: 20px;
     font-family: Arial, sans-serif;
     background-image: url("https://i.ibb.co/HTBXbhh/wp7442224.jpg");
@@ -18,14 +18,14 @@ body {
     align-items: center;
 }
 
-h1, h3, p {
-    text-align: center;
-}
-
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h1, h3, p {
+    text-align: center;
 }
 
 select {
@@ -41,34 +41,45 @@ select {
     transition: opacity 0.8s ease-out;
 }
 
-#article-container {
-    position: relative;
-    padding: 0 20px; /* Add padding to create space between the borders and the text */
-    text-align: justify; /* Justify the text */
-    hyphens: auto; /* Enable hyphenation for long words */
-    word-break: break-word; /* Break words that exceed the container width */
-    max-width: 700px; /* Adjust the value to set the desired maximum width */
-    margin: 0 auto; /* Center the container horizontally */
-}
-
+/* Стили для панели навигации */
 .nav-container {
     background-color: black;
-    position: relative;
     display: flex;
     align-items: center;
-    height: 50px;
-    margin-bottom: 20px;
-    padding: 0 20px; /* Добавляем отступы слева и справа для разделения элементов */
+    height: 55px;
+    padding: 0;
 }
 
 .nav-container .logo {
-    margin-right: 50px; /* Уменьшаем отступ справа для более плотного расположения элементов */
-    width: 50px; /* Указываем фиксированную ширину для лого */
+    margin-right: 10px;
+    width: 20px;
 }
 
 .nav-container .site-title {
     color: white;
     font-size: 18px;
-    margin: 0 20px; /* Add left and right margin to create space between the elements */
+    margin: 0;
 }
 
+.nav-container .help-text {
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.nav-container .divider {
+    width: 1px;
+    height: 40px;
+    background-color: white;
+    margin: 0 10px; /* Adjust the margin as needed */
+}
+
+#article-container {
+    position: relative;
+    padding: 0 20px;
+    text-align: justify;
+    hyphens: auto;
+    word-break: break-word;
+    max-width: 700px;
+    margin: 0 auto;
+}
