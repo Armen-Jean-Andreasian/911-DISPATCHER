@@ -7,16 +7,15 @@
 </head>
 <body>
 <div class="nav-container">
-    <a href="{{ url_for('index') }}" class="home-link">
+    <a href="{{ url_for('home') }}" class="home-link">
         <img src="{{ url_for('static', filename='home.png') }}" alt="Home">
     </a>
     <div class="divider"></div>
     <h1 class="site-title">911 DISPATCHER</h1>
     <span class="help-text"><i>"I am here to provide help!"</i></span>
+    <button class="action-button" onclick="window.location.href='/emergency_numbers'">Emergency Numbers</button>
 </div>
-
-
-    <div class="content">
+ <div class="content">
         <p>Please select the type of emergency:</p>
         <select id="emergency-type" onchange="handleEmergencyType()">
             <option value="" selected disabled>Select</option>

@@ -67,7 +67,15 @@ select {
     font-size: 14px;
     margin-left: 10px;
 }
-
+.nav-container .action-button {
+    margin-left: auto; /* Располагаем кнопку справа */
+    padding: 8px 16px; /* Добавляем отступы для кнопки */
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
 .nav-container .divider {
     width: 1px;
     height: 40px;

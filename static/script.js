@@ -68,3 +68,44 @@ function loadArticle() {
             });
     }
 }
+function emergencyNumbers() {
+  // Get the selected nationality and country
+  console.log("emergencyNumbers() function called");
+
+  var nationalitySelect = document.getElementById("nationality-select");
+  var countrySelect = document.getElementById("country-select");
+  var nationality = nationalitySelect.value;
+  var country = countrySelect.value;
+
+  // Create a data object with the search data
+  var searchData = {
+    search_data: { nationality: nationality, country: country },
+  };
+
+  // Make a POST request to the backend /search route
+  fetch("/search", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(searchData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // Display the generated links on the page
+      var linksContainer = document.getElementById("links-container");
+      linksContainer.innerHTML = "";
+
+      data.forEach((link) => {
+        var linkElement = document.createElement("a");
+        linkElement.href = link;
+        linkElement.target = "_blank";
+        linkElement.textContent = link;
+        linksContainer.appendChild(linkElement);
+        linksContainer.appendChild(document.createElement("br"));
+      });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
