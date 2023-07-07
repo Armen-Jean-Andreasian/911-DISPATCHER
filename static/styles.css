@@ -1,9 +1,6 @@
-/* styles.css */
-
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
     margin: 0;
@@ -13,6 +10,12 @@ body {
     background-size: cover;
     background-position: center;
     color: white;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1, h3, p {
@@ -51,10 +54,21 @@ select {
 .nav-container {
     background-color: black;
     position: relative;
-    width: 100%;
+    display: flex;
+    align-items: center;
     height: 50px;
     margin-bottom: 20px;
+    padding: 0 20px; /* Добавляем отступы слева и справа для разделения элементов */
 }
-.home-link img {
-    src: url("{{ url_for('static', filename='images/home.png') }}");
+
+.nav-container .logo {
+    margin-right: 50px; /* Уменьшаем отступ справа для более плотного расположения элементов */
+    width: 50px; /* Указываем фиксированную ширину для лого */
 }
+
+.nav-container .site-title {
+    color: white;
+    font-size: 18px;
+    margin: 0 20px; /* Add left and right margin to create space between the elements */
+}
+
