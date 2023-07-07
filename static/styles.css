@@ -50,6 +50,7 @@ select {
     height: 60px;
     padding: 0;
     margin-bottom: 50px;
+    margin-left: 5px;
 }
 
 .nav-container .logo {
@@ -73,9 +74,10 @@ select {
     padding: 8px 16px; /* Добавляем отступы для кнопки */
     background-color: #000;
     color: #fff;
-    border: none;
+    border: 1px dotted white;
     cursor: pointer;
     text-decoration: none;
+    margin-right: 15px;
 }
 .nav-container .divider {
     width: 1px;
